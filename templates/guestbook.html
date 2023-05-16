@@ -24,11 +24,27 @@
         margin-top: 80px;
       }
       .posting {
-        /* background-color: white; */
         width: 800px;
-        /* color: black; */
         text-align: center;
+        display: none;
       }
+      .posting.on{
+        /* color: black; */
+        display: block;
+      }
+
+      .update {
+        width: 800px;
+        text-align: center;
+        display: none;
+      }
+      .update.on{
+        /* color: black; */
+        display: block;
+      }
+
+
+
       .guestBook_name {
         margin-left: 600px;
       }
@@ -37,7 +53,18 @@
         color: white;
       }
 
-      input {
+      input[type=text] {
+        width: 200px;
+        height: 32px;
+        font-size: 15px;
+        border: 0;
+        border-radius: 15px;
+        outline: none;
+        padding-left: 10px;
+        background-color: rgb(233, 233, 233);
+      }
+
+      input[type=password] {
         width: 200px;
         height: 32px;
         font-size: 15px;
@@ -68,18 +95,27 @@
       .guestBook_id {
         margin-right: 80px;
       }
+
+      .guestBook_update_id{
+        margin-right: 40px;
+      }
     </style>
+    <script>
+      // CREATE
+      
+    </script>
   </head>
   <body>
     <div class="background">
       <h1 class="title">Speaking Potato</h1>
       <h2 class="guestBook">감자들에게 물 주기</h2>
-      <div class="posting">
+      <!-- 등록 전용 -->
+      <div class="posting on">
         닉네임 : <input type="text" class="guestBook_id" /> 
         비밀번호 : <input type="password" class="guestBook_password" /><br />
         내용 :
         <textarea
-          class="comment"
+          class="guestBook_comment"
           cols="70"
           rows="0"
           placeholder="30자 이내로 입력 부탁드립니다."
@@ -87,7 +123,25 @@
         <br>
         <button class="add_post">등록</button>
       </div>
+
+      <!-- 수정 전용 -->
+      <div class="update">
+        닉네임 : <input type="text" class="guestBook_update_id"/> 
+        <br />
+        내용 :
+        <textarea
+          class="update_comment"
+          cols="70"
+          rows="0"
+          placeholder="수정 할 내용."
+        ></textarea>
+        <br>
+        <button class="update_btn">수정</button>
+        <button class="cancel_btn">취소</button>
+      </div>
       <hr />
+
+      <!-- 리스트 -->
       <div class="guestBook_list">
         <span class="guestBook_comment">내용</span>
         <span class="guestBook_name">-닉네임-</span>
@@ -99,5 +153,85 @@
       <a href="#" vlink="white" alink="white">&lt;</a> ㅇㅇㅇ
       <a href="#" vlink="white" alink="white">&gt;</a>
     </div>
+    <script>
+
+      //수정시 비밀번호 확인을 위한 스크립트
+      $('.guestBook_update').click(() => {
+
+        let g_num = 0;
+        let g_password = prompt("비밀번호를 입력 해 주세요",)
+
+        let formData = new FormData();
+
+        formData.append("g_password_give", g_password);
+        formData.append("g_num_give", g_num);
+      
+        fetch('/api/guestbook/check', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
+
+            if(data['result']) {
+              let name = data['result'].name;
+              let comment = data['result'].comment;
+              let g_num = data['result'].g_num;
+
+              $('.posting').removeClass('on');
+              $('.update').addClass('on');
+              $('.guestBook_update_id').attr('value',name);
+              $('.guestBook_update_id').attr('data',g_num);
+              $('.update_comment').attr('placeholder',comment);
+            } else{
+              alert(data['msg']);
+            }
+        })
+      })
+
+      
+      //비밀번호 확인 후 수정 스크립트
+      $('.update_btn').click(() =>{
+
+        let formData = new FormData();
+
+        let name = $('.guestBook_update_id').val();
+        let comment = $('.update_comment').val();
+        if(comment == ''){
+          comment = $('.update_comment').attr('placeholder');
+        }
+        let g_num = 0;
+
+        formData.append("name_give", name);
+        formData.append("comment_give", comment);
+        formData.append("g_num_give", g_num);
+        alert(formData)
+        fetch('/api/guestbook', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
+            alert(data['msg']);
+            // 새로고침
+            window.location.reload();
+        })
+      })
+
+      $('.cancel_btn').click( () => { 
+        window.location.reload();
+      })
+
+      
+      // 포스팅
+      // $('.add_post').click(function () {
+        // let formData = new FormData();
+
+        // let name = $('.guestBook_id').val()
+        // let comment = $('.comment').val()
+        // let g_password =$('.guestBook_password').val()
+
+        // formData.append("name_give", name);
+        // formData.append("comment_give", comment);
+        // formData.append("g_password_give", g_password);
+        // alert(formData)
+        // fetch('/api/guestbook', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
+        //     alert(data['msg'])
+        //     // 새로고침
+        //     window.location.reload()
+        // })
+      // })
+
+    </script>
   </body>
 </html>
