@@ -5,10 +5,12 @@ client = MongoClient('mongodb+srv://sparta:test@cluster0.9us23my.mongodb.net/?re
 db = client.dbsparta
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
 
+# 방명록
 @app.route('/guestbook')
 def guestbook():
     return render_template("guestbook.html")
@@ -30,7 +32,7 @@ def guestbook():
 #     return jsonify({'msg': 'POST 연결 완료!'})
     
 
-#수정을 위한 조회
+# 수정을 위한 조회
 @app.route("/api/guestbook/check", methods=["POST"])
 def potato_update_check():
     g_password_receive = request.form['g_password_give']
@@ -42,8 +44,8 @@ def potato_update_check():
         return jsonify({'msg':'비밀번호를 확인해주세요'})
 
 
-#방명록 수정
-@app.route("/api/guestbook", methods=["POST"])
+# 방명록 수정
+@app.route("/api/guestbook", methods=["PUT"])
 def potato_update():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']

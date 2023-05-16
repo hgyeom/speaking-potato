@@ -155,7 +155,7 @@
     </div>
     <script>
 
-      //수정시 비밀번호 확인을 위한 스크립트
+      //수정시 비밀번호 확인을 위한 스크립트. 조회 기능 구현 시 db에 확인하는 과정 삭제 예정.
       $('.guestBook_update').click(() => {
 
         let g_num = 0;
@@ -185,7 +185,7 @@
       })
 
       
-      //비밀번호 확인 후 수정 스크립트
+      // 수정 
       $('.update_btn').click(() =>{
 
         let formData = new FormData();
@@ -201,7 +201,7 @@
         formData.append("comment_give", comment);
         formData.append("g_num_give", g_num);
         alert(formData)
-        fetch('/api/guestbook', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
+        fetch('/api/guestbook', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
             alert(data['msg']);
             // 새로고침
             window.location.reload();
