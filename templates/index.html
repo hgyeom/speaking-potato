@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- 부트스트랩 -->
-    
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -62,9 +62,16 @@
 
       /* 하단 막대 */
       .footer {
-        text-align: center;
+        display: flex;
       }
-      
+      .circle1,
+      .circle2,
+      .circle3 {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: white;
+      }
     </style>
 
     <!-- js -->
@@ -104,9 +111,11 @@
 
     
     <!-- 하단 막대 -->
-    <div class="footer">
-    <a class="btn btn-primary" onclick="location.reload();" >◀</a>
-    <a class="btn btn-primary" href='http://localhost:5000/members'>▶</a>
+    <div content="footer">
+      <a href="guestbook">임시 방명록 이동</a>
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
     </div>
   </body>
 </html>
