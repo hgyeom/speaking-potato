@@ -1,0 +1,153 @@
+.header {
+  margin-top: 3%;
+  font-size: large;
+}
+
+.title {
+  text-align: center;
+}
+
+body,
+ul,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+  /* 이름과 mbti가 왼쪽 하단으로 가게 해요 */
+}
+
+li {
+  list-style-type: none;
+  /* 이거를 none값으로 지정해야 동그라미 표시가 없어져요 */
+}
+body {
+  background-color: #141414;
+  /* 넷플릭스 배경 색깔이에요! 더 심플하고 예쁜 색깔이 있다면 말씀 해주세요!*/
+  color: white;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  height: 75vh;
+  /* 두개의 속성을 주면서 감자들이 가운데로 오게 해요 */
+  justify-content: center;
+  align-items: center;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  /* 이거를 센터로 맞춰주면 호버기능이 작동했을 때 감자들이 센터를 중심으로 확대되요, 이 속성을 없애면 대각선으로 확대되더라구요 이건 상의 후에 뭐가 더 예쁜지 고르면 될 것 같아요!!*/
+}
+
+.team-item {
+  flex-basis: 250px;
+  /* 이거는 감자들의 크기를 100px로 지정해주는 거에요 이거를 없애면 감자들이 왕 커져요 일단은 100픽셀로 해놓긴 했는데 상의 후에 사이즈를 키울지 말지 정하면 될 것 같아요~!*/
+  margin: 0 10px;
+  /* 이거는 마진을 10픽셀 줘서 감자들 사이 간격을 멀어지게 하는 거에요! 마진 값이 0이면 감자들이 다닥다닥 붙어있어요 요것도 상의 해서 간격을 얼마나 줄지 정하면 될 것 같아욥! */
+  transition: all 0.4s;
+  /* 이거는 트렌지션 효과인데 호버 기능이 작동할때 감자들이 커지는 속도를 조절해 주는 거에요!이거를 한번 4s정도로 수정하고 저장해서 보시면 엄청 느리게 커지는게 보이실 거에요! */
+  /* opacity: 0.9; */
+  /* 이거는 감자의 밝기를 조절해요 */
+}
+
+.team-item:hover .profile-contents p {
+  max-height: 200px;
+  flex-basis: 150px;
+  opacity: 10;
+  max-height: 10em;
+  /* 이거는 감자가 호버기능이 작동될 때 감자가 얼마나 커지는지 사이즈를 정하는 거에요! */
+  /* margin: 0 30px; 이거는 감자 크기를 얼마나 키울지 만든 후에 사이즈 조절*/
+}
+
+.team-item img {
+  width: 100%;
+  /* 만약에 team-item img에게 송석을 부여하지 않으면 감자가 왕왕 슈퍼 감자가 되요, width값을 주석처리 하고 한번  엄청 귀여워요 */
+
+  /* 여기 아주 종요한 부분이에요!! 이거는 저희가 컨셉을 어떻게 잡아야 할지 정해야 하는데 일단은 무난하게 감자별로 간격을 줘서 배치를 했지만 
+  만약에 width값을 200퍼나 300퍼를 주고 확인해보시면 감자들이 귀엽게 어깨동무를 하고 있어요 하번 코드를 수정해보시고 뭐가 더 컨셉에 맞을지 정하면 될 것 같아요! */
+}
+
+.profile {
+  /* background-color: none; */
+  /* 누끼(프로필 사진) 바탕이 될 색깔이에요 */
+  position: relative;
+  overflow: hidden;
+
+  /* 이 속성 값을 부여해 줘야 프로파일 안에 이름과 엠비티아이가 들어와요! */
+}
+
+.profile:before {
+  content: " ";
+  background: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.profile:hover:before {
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#f2000000',GradientType=0 );
+}
+
+.profile-contents {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: rgb(255, 255, 255);
+  /* 커맨드+f2 누르면 rgb상세조절이 가능해욥! */
+}
+
+.profile-contents h2 {
+  font-size: 25px;
+  margin-left: 5%;
+  /* h2태그로 감싼 프로필 사진에 들어가는 이름 사이즈 에욤 늘리거나 줄여서 보고 맘에 드는 사이즈로 정하면 될 것 같아요 */
+}
+
+.profile-contents h2 span {
+  display: block;
+  /* 여기서도 의논해야 할 부분이 있는데 현재는 속성을 적용한 상태입니다 : 디스플레이 속성을 적용하면 왼쪽 하단에 이름 밑에 엠비티아이가 나오게 되고 이 속성을 주지 않으면 이름이 왼쪽 하단으로 내려가고 앰베티아이는 오른쪽 하단으로 붙어서 가로 나열이 되요. */
+  font-size: 15px;
+  /* 이거는 이름 밑에 mbti 글자 사이즈 입니당 */
+}
+
+.profile-contents p {
+  display: white;
+  font-size: 15px;
+  min-width: 140px;
+  max-height: 0;
+  overflow: hidden;
+  line-height: 1.2;
+  transition: all 0.6s;
+  opacity: 0;
+  line-height: 1.3;
+  transition-delay: 0.4s;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+.footer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
