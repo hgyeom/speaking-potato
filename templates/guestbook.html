@@ -114,6 +114,26 @@
       .guestBook_update_id{
         margin-right: 40px;
       }
+
+      /* 버튼 */
+      .custom-btn {
+          margin: 0;
+          border: 0;
+          font-size: 18px;
+          position: relative;
+          margin-left: 3px;
+          text-align: center;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          width: 60px;
+          cursor: default;
+      }
+
+      .custom-btn:hover {
+          cursor: pointer;
+      }
+
     </style>
   </head>
   <body>
@@ -132,7 +152,7 @@
           placeholder="30자 이내로 입력 부탁드립니다."
         ></textarea>
         <br>
-        <button class="add_post" onclick="posting()">등록</button>
+        <button class="add_post custom-btn" onclick="posting()">등록</button>
       </div>
 
       <!-- 수정 전용 -->
