@@ -12,14 +12,14 @@ function listing() {
             let name = a["name"];
             // let g_password = a["g_password"];
             let comment = a["comment"];
-            let g_num = a["g_num"];
-
+            let g_num = a["_id"];
+            console.log(g_num)
             let temp_html = `
                             <div class="list_container"> 
                             <span class="guestBook_comment">${comment}</span>
                             <span class="guestBook_name">-${name}-</span>
-                            <button class="guestBook_update" onclick="update_check(${g_num})">수정</button>
-                            <button class="guestBook_delete" onclick="guestBook_delete(${g_num})">삭제</button>
+                            <button class="guestBook_update custom-btn btn-1" onclick="update_check('${g_num}')">수정</button>
+                            <button class="guestBook_delete custom-btn btn-1" onclick="guestBook_delete('${g_num}')">삭제</button>
                             </div>
                             <hr />
                             `;
@@ -53,6 +53,7 @@ function update_check(g_num) {
 
     let formData = new FormData();
 
+    console.log(g_num)
     formData.append("g_password_give", g_password);
     formData.append("g_num_give", g_num);
 
@@ -61,8 +62,8 @@ function update_check(g_num) {
         if(data['result']) {
             let name = data['result'].name;
             let comment = data['result'].comment;
-            let g_num = data['result'].g_num;
-
+            let g_num = data['result']._id;
+            
             $('.posting').removeClass('on');
             $('.update').addClass('on');
             $('.guestBook_update_id').attr('value',name);
