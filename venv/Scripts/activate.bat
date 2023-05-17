@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=E:\dev\sparta\react_firstweek_a_team1_mini\venv
+set VIRTUAL_ENV=C:\Users\user\Desktop\sparta\miniproject_2\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
