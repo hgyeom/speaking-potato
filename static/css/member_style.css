@@ -147,5 +147,7 @@ body {
 
 .footer {
   color: white;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
