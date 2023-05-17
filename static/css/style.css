@@ -1,0 +1,65 @@
+* {
+  background-color: black;
+  color: white;
+}
+
+.header {
+  text-align: center;
+}
+
+.main_content {
+  margin: 90px auto;
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_content {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.image_background {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: white;
+}
+
+.image_potato {
+  background-color: transparent;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.text_content {
+  width: 400px;
+}
+
+.first_text {
+}
+
+.first_text > h2 {
+  padding-left: 70px;
+}
+
+.second_text {
+}
+
+.second_text > h1 {
+  text-decoration: underline;
+}
+
+.third_text {
+}
+
+.third_text > h2 {
+  padding-left: 100px;
+}
+
+/* 하단 막대 */
+.footer {
+  text-align: center;
+  padding-top: 50px;
+}
