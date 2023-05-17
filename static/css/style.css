@@ -5,11 +5,13 @@
 
 .header {
   text-align: center;
+  margin-bottom: 0%;
+  padding-bottom: 30px;
 }
 
 .main_content {
-  margin: 90px auto;
-  padding: 70px;
+  margin: 0 auto;
+  padding: 160px 70px 160px 70px;
   display: flex;
   align-items: center;
   justify-content: center;
