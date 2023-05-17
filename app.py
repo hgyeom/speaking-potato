@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
-import random
 
 client = MongoClient('mongodb+srv://sparta:test@cluster0.9us23my.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
@@ -48,6 +47,7 @@ def potato_post():
     }
     db.potato.insert_one(doc)  #db에 데이터 저장
     return jsonify({'msg': '방명록 저장완료'})
+
 
 
 # 김무겸
