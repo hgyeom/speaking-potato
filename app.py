@@ -20,6 +20,14 @@ def members():
 def guestbook():
     return render_template("guestbook.html")
 
+
+# 이안진   
+# 방명록 조회(Get)
+@app.route("/api/guestbook", methods=["GET"])
+def potato_get():
+    all_guestbooks = list(db.potato.find({}, {'_id':False})) #dB상의 데이터들을 변수 all_guestbooks에 저장하고
+    return jsonify({'result': all_guestbooks})  #클라이언트로 내려줌
+
 # 방명록 등록  
 @app.route("/api/guestbook", methods=["POST"])
 def potato_post():
@@ -37,13 +45,14 @@ def potato_post():
     return jsonify({'msg': '방명록 저장완료'})
 
 
+# 김무겸
 # 수정을 위한 조회
 @app.route("/api/guestbook/check", methods=["POST"])
 def potato_update_check():
     g_password_receive = request.form['g_password_give']
     g_num_receive = int(request.form['g_num_give'])
     guestbook = db.potato.find_one({'g_num':g_num_receive,'g_password':g_password_receive},{'_id':False})
-    print(guestbook)
+    
     if guestbook:
         return jsonify({'result':guestbook})
     else :
@@ -68,14 +77,22 @@ def potato_update():
                         })
     return jsonify({'msg': '수정완료!'})
 
+# 방명록 삭제
+@app.route("/api/guestbook", methods=["DELETE"])
+def potato_delete():
+    g_num_receive = int(request.form['g_num_give'])
+    g_password_receive = request.form['g_password_give']
+    
+    # 데이터 찾기
+    guestbook = db.potato.find_one({'g_num':g_num_receive,'g_password':g_password_receive},{'_id':False})
+    
+    # 찾은 데이터가 있으면 삭제하고 삭제완료 메시지를 보내준다. 없으면 비밀번호 확인 메시지를 보내준다.
+    if guestbook:
+        db.potato.delete_one({'g_num':g_num_receive,'g_password':g_password_receive})
+        return jsonify({'msg':"삭제 완료"})
+    else :
+        return jsonify({'msg':'비밀번호를 확인해 주세요'})
 
-
-# 이안진   
-# 방명록 조회(Get)
-@app.route("/api/guestbook", methods=["GET"])
-def potato_get():
-    all_guestbooks = list(db.potato.find({}, {'_id':False})) #dB상의 데이터들을 변수 all_guestbooks에 저장하고
-    return jsonify({'result': all_guestbooks})  #클라이언트로 내려줌
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)

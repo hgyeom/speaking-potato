@@ -19,8 +19,9 @@ function listing() {
                             <span class="guestBook_comment">${comment}</span>
                             <span class="guestBook_name">-${name}-</span>
                             <button class="guestBook_update" onclick="update_check(${g_num})">수정</button>
-                            <button class="guestBook_delete">삭제</button>
+                            <button class="guestBook_delete" onclick="guestBook_delete(${g_num})">삭제</button>
                             </div>
+                            <hr />
                             `;
 
             $(".guestBook_list").prepend(temp_html);
@@ -45,7 +46,7 @@ function posting() {
     });
 }
 
-//수정시 비밀번호 확인을 위한 스크립트. 조회 기능 구현 시 db에 확인하는 과정 삭제 예정. > 고려중
+//김무겸. 수정시 비밀번호 확인을 위한 스크립트. 조회 기능 구현 시 db에 확인하는 과정 삭제 예정. > 고려중
 function update_check(g_num) {
         
     let g_password = prompt("비밀번호를 입력 해 주세요",)
@@ -74,7 +75,7 @@ function update_check(g_num) {
 }
 
   
-// 수정 
+// 김무겸. 수정 .
 $('.update_btn').click(() =>{
 
     let formData = new FormData();
@@ -102,3 +103,18 @@ $('.update_btn').click(() =>{
 $('.cancel_btn').click( () => { 
     window.location.reload();
 })
+
+// 김무겸. 삭제 기능. 
+function guestBook_delete(g_num){
+    let g_password = prompt("비밀번호를 입력 해 주세요",)
+
+    let formData = new FormData();
+
+    formData.append("g_password_give", g_password);
+    formData.append("g_num_give", g_num);
+
+    fetch('/api/guestbook', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
+        alert(data['msg']);
+        window.location.reload();
+    })  
+}
