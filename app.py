@@ -28,21 +28,26 @@ def potato_get():
     all_guestbooks = list(db.potato.find({}, {'_id':False})) #dB상의 데이터들을 변수 all_guestbooks에 저장하고
     return jsonify({'result': all_guestbooks})  #클라이언트로 내려줌
 
-# 방명록 등록  
+# 방명록 등록  / 05.17 김무겸. 고유번호 겹칠 시 랜덤으로 고유번호 더하기.
 @app.route("/api/guestbook", methods=["POST"])
 def potato_post():
     name_receive = request.form['name_give']
     g_password_receive = request.form['g_password_give']
     comment_receive = request.form['comment_give']
+    g_num = len(list(db.potato.find({})))
 
+    # 만약 g_num과 같은 데이터가 있다면 1부터 10000까지 수중 랜덤으로 더해라
+    if db.potato.find_one({'g_num':g_num},{'_id':False}):
+        g_num += random.randrange(1,10000)
     doc = {
             'name': name_receive,
             'g_password': g_password_receive,
             'comment': comment_receive,
-            'g_num':len(list(db.potato.find({})))
+            'g_num': g_num
     }
     db.potato.insert_one(doc)  #db에 데이터 저장
     return jsonify({'msg': '방명록 저장완료'})
+
 
 
 # 김무겸
