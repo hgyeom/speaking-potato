@@ -101,6 +101,23 @@ def potato_delete():
         return jsonify({'msg':"삭제 완료"})
     else :
         return jsonify({'msg':'비밀번호를 확인해 주세요'})
+    
+#추전하기
+@app.route("/api/like", methods=["PUT"])
+def like_update():
+    likename_receive= request.form['likename_give']
+    
+    print(likename_receive)
+
+    like = db.potato_like.find_one({'like_name':likename_receive},{'_id':False}).get('like') + 1
+    print(like)
+    db.potato_like.update_one({'like_name':likename_receive},
+                        {'$set':{
+                                    'like':like
+                                }
+                        })
+    
+    return jsonify({'msg':"💖응원 감자합니다!💖"})
 
 
 if __name__ == '__main__':
