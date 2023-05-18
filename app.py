@@ -103,6 +103,7 @@ def potato_delete():
         return jsonify({'msg':'비밀번호를 확인해 주세요'})
     
 
+
 # 추천하기
 @app.route("/api/like", methods=["PUT"])
 def like_update():
@@ -119,6 +120,7 @@ def like_update():
                         })
     
     return jsonify({'msg':"💖응원 감자합니다!💖"})
+
 
 
 # 추천하기 조회
