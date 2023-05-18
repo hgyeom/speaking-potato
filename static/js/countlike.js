@@ -1,12 +1,10 @@
-function count(type) {
-  const resultElement = document.getElementById('result');
+function set_like(like_name) {
+    let formData = new FormData();
 
-  let number = resultElement.innerText;
-
-  if(type == 'plus') {
-    number = parseInt(number) + 1;
-    }
-
-resultElement.innerText = number;
-
+    formData.append("likename_give", like_name)
+    
+    fetch('/api/like', { method: "PUT", body: formData }).then((res) => res.json()).then((data) => {
+        alert(data['msg']);
+    })
 }
+
