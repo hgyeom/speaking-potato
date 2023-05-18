@@ -75,7 +75,7 @@ function update_check(g_num) {
     })  
 }
 
-  
+
 // 김무겸. 수정 .
 $('.update_btn').click(() =>{
 
