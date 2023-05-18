@@ -1,20 +1,31 @@
 body {
-    background-color: black;
+    background-color: #141414;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .background {
     color: white;
   }
+
+  *{
+    font-family: 'BMJUA'
+  }
+  @font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
   .title {
+    margin-top: 3%;
     text-align: center;
+    font-size: 50px;
   }
 
   /* 리스트 css */
   .guestBook {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .list_container{

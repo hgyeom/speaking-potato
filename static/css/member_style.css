@@ -1,3 +1,14 @@
+* {
+  font-family: 'BMJUA'
+}
+
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .header {
   margin-top: 3%;
   font-size: large;
@@ -5,6 +16,7 @@
 
 .title {
   text-align: center;
+  font-size: 50px;
 }
 
 body,
@@ -24,7 +36,6 @@ body {
   background-color: #141414;
   /* 넷플릭스 배경 색깔이에요! 더 심플하고 예쁜 색깔이 있다면 말씀 해주세요!*/
   color: white;
-  font-family: "Noto Sans KR", sans-serif;
 }
 
 .wrapper {
@@ -148,4 +159,12 @@ body {
 .footer {
   color: white;
   text-align: center;
+}
+
+.footer_navi {
+  text-decoration: none;
+}
+
+p{
+  hyphens: none;
 }
