@@ -122,6 +122,11 @@ def like_update():
 
 
 # 추천하기 조회
+@app.route("/api/like", methods=["GET"])
+def like_get():
+    
+    all_likes = list(db.potato_like.find({},{'_id':False})) 
+    return jsonify({'result': all_likes})  
 
 
 
