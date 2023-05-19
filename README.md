@@ -40,7 +40,7 @@
 
 ## 3. 프로젝트 주소
 
-[(https://github.com/hgyeom/speaking-potato)]
+https://github.com/hgyeom/speaking-potato
 
 ## 4. 프로젝트 S.A
 https://teamsparta.notion.site/A-1-S-A-111709dce5ed43b5a5f3c53eb3e04db1
