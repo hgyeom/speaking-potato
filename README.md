@@ -1,18 +1,18 @@
 스파르타 코딩클럽 내일배움캠프 본캠프 1주차 미니프로젝트 - 팀 소개 화면. React 1팀 : Speaking Potato
 
-# 맛잘알 녀석들 [오날엔]
+# Speaking Potato [24/7 올타임 레전드]
 
-스파르타코딩클럽 6기_React / 23.05.08 ~ 23.05.12 / first project
+스파르타코딩클럽 6기_React / 23.05.15 ~ 23.05.19 
 
 ## 팀원
 
-| 팀원   | 스택         | 팀원구분 | 깃허브                                      | 
-| ------ | ------------ | -------- | ------------------------------------------- | 
-| 김재영 | `프론트엔드` | `팀장`   | [https://dobby-factory.tistory.com/](https://github.com/jaeyoung9083)     | 
-| 김무겸 | `프론트엔드` | 팀원     | [https://frian.tistory.com/](https://github.com/hgyeom) |      
-| 이안진 | `프론트엔드` | 팀원     | [https://lethargin.tistory.com/manage/posts](https://github.com/AJ3504) |         |
-| 정송주 | `프론트엔드`     | 팀원     | [https://velog.io](https://github.com/songjuu)     | 
-| 최다연 | `프론트엔드`     | 팀원     | [https://velog.io/@cheddaryeon99](https://github.com/cheddaryeon)     | 
+| 팀원   |  팀원구분 | 깃허브                                      | 
+| ------ | -------- | ------------------------------------------- | 
+| 김재영 | `팀장`   | [https://dobby-factory.tistory.com/](https://github.com/jaeyoung9083)     | 
+| 김무겸 |  팀원     | [https://frian.tistory.com/](https://github.com/hgyeom) |      
+| 이안진 |  팀원     | [https://lethargin.tistory.com/manage/posts](https://github.com/AJ3504) |         |
+| 정송주 |  팀원     | [https://velog.io](https://github.com/songjuu)     | 
+| 최다연 |  팀원     | [https://velog.io/@cheddaryeon99](https://github.com/cheddaryeon)     | 
 
 ## 목차
 
@@ -36,3 +36,48 @@
 팀원 소개 페이지에서는 저희 팀원들의 성격 및 각오를 보실 수 있고, 방명록 페이지에서는 직접 코멘트를 남길 수 있습니다.
 
 ## 2. 프로젝트 시연 영상
+[유튜브 링크](https://youtu.be/T-_IzOmaRBU)
+
+## 3. 프로젝트 주소
+
+[(https://github.com/hgyeom/speaking-potato)]
+
+## 4. 프로젝트 S.A
+https://teamsparta.notion.site/A-1-S-A-111709dce5ed43b5a5f3c53eb3e04db1
+
+## 5. 기술스택
+  * Javascript
+  * html/css
+  * Python
+  * MongoDB
+
+## 6. 사용한 라이브러리
+  * JQuery
+  * Bootstrap
+  * Flask
+  * Bs4
+  * Pymongo
+  * MongoDB
+
+## 7. API Table
+
+| Number | Method | URL                                   | Description     | Request                                                      | Response                                                     |
+| ------ | ------ | ------------------------------------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 1      | `POST` | /api/guestbook                          | 방명록 작성          | { ’name’: 닉네임, ‘comment’:코멘트, ’g_password’:비밀번호 } | POST /api/guestbook HTTP/1.1" 200 - { ’msg’:’방명록 저장완료’ } | 
+| 2      | `PUT` | /api/guestbook                            | 방명록 수정           | { ’name’: 닉네임, ‘comment’:코멘트, ’_id’:고유번호, ’g_password’:비밀번호 }  |  PUT/api/guestbookHTTP/1.1" 200{ ‘msg’: ‘ 수정완료. } |                                
+| 3      | `GET`  | /api/guestbook                            | 방명록 조회    |                   | GET /api/guestbook HTTP/1.1 200 { ’name’: 닉네임, ‘comment’:코멘트, ’_id’:고유번호, ’g_password’:게시글 비밀번호 }                                                             
+| 4      | `GET`  | /api/guestbook                            | 방명록 삭제          |  { ’_id’:고유번호, ’g_password’:비밀번호 } | DELETE /api/guestbook HTTP/1.1" 200 - { ‘msg’:’삭제완료’ }                        
+| 5      | `GET`  | /api/like                       | 응원하기   |  { like’:like } | PUT /api/like HTTP/1.1" 200 { ‘msg’:’💖응원 감자합니다!💖’ }
+| 6      | `GET`  | /api//like                  | 응원수 조회  |       | GET /api/like HTTP/1.1" 200 - { ‘like_name’: 이름, ‘like’: 응원 수 } |
+
+
+## 8. 구현 기능
+
+### 1) 메인 페이지
+![1](https://github.com/AJ3504/first-project-onalen-/assets/131579657/e23ca0d4-f9aa-4e35-b2bf-fab920018310)
+
+### 2) 멤버 소개 페이지
+![2](https://github.com/AJ3504/first-project-onalen-/assets/131579657/41d885fe-932d-493b-8947-929e1964509e)
+
+### 3) 방명록
+![3](https://github.com/AJ3504/first-project-onalen-/assets/131579657/a535fba5-f89b-4722-8f35-9b0b36548735)
