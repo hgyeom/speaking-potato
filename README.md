@@ -6,13 +6,13 @@
 
 ## 팀원
 
-| 팀원   |  팀원구분 | 깃허브                                      | 
-| ------ | -------- | ------------------------------------------- | 
-| 김재영 | `팀장`   | [https://dobby-factory.tistory.com/](https://github.com/jaeyoung9083)     | 
-| 김무겸 |  팀원     | [https://frian.tistory.com/](https://github.com/hgyeom) |      
-| 이안진 |  팀원     | [https://lethargin.tistory.com/manage/posts](https://github.com/AJ3504) |         |
-| 정송주 |  팀원     | [https://velog.io](https://github.com/songjuu)     | 
-| 최다연 |  팀원     | [https://velog.io/@cheddaryeon99](https://github.com/cheddaryeon)     | 
+| 팀원   |  팀원구분 | 깃허브                                      | 블로그                                  |
+| ------ | -------- | ------------------------------------------- | --------------------------------- |
+| 김재영 | `팀장`   | (https://github.com/jaeyoung9083)  | [https://dobby-factory.tistory.com/]          |
+| 김무겸 |  팀원     | (https://github.com/hgyeom) | [https://frian.tistory.com/]                        |    
+| 이안진 |  팀원     | (https://github.com/AJ3504) | [https://lethargin.tistory.com/manage/posts]        |
+| 정송주 |  팀원     | (https://github.com/songjuu) | [https://velog.io]                                 |
+| 최다연 |  팀원     | (https://github.com/cheddaryeon)     | [https://velog.io/@cheddaryeon99]          |
 
 ## 목차
 
