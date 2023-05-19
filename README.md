@@ -74,10 +74,10 @@ https://teamsparta.notion.site/A-1-S-A-111709dce5ed43b5a5f3c53eb3e04db1
 ## 8. 구현 기능
 
 ### 1) 메인 페이지
-![1](https://github.com/AJ3504/first-project-onalen-/assets/131579657/e23ca0d4-f9aa-4e35-b2bf-fab920018310)
+<img width="1440" alt="스크린샷 2023-05-19 오전 9 56 03" src="https://github.com/hgyeom/speaking-potato/assets/131579657/b763c6b0-d418-45d5-99e8-3abf25d4f3d5">
 
 ### 2) 멤버 소개 페이지
-![2](https://github.com/AJ3504/first-project-onalen-/assets/131579657/41d885fe-932d-493b-8947-929e1964509e)
+<img width="1440" alt="스크린샷 2023-05-19 오전 9 56 32" src="https://github.com/hgyeom/speaking-potato/assets/131579657/33bf5f3c-c865-4832-874e-95c74e79b5bd">
 
 ### 3) 방명록
-![3](https://github.com/AJ3504/first-project-onalen-/assets/131579657/a535fba5-f89b-4722-8f35-9b0b36548735)
+![image](https://github.com/hgyeom/speaking-potato/assets/131579657/3f5b87d8-1be1-4154-b1de-d97b2f2316f1)
